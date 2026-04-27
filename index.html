@@ -1,3 +1,5 @@
+Here is an updated HTML document that places your "A Taste of Chanel (4).png" image next to the footer, integrated into the elegant tribute design.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,11 +83,25 @@
       margin-bottom: 0.75rem;
     }
 
-   
-    
+    .double-c {
+      display: flex;
+      justify-content: center;
+      gap: 0.9rem;
+      font-size: 3rem;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 8px;
+      margin-bottom: 0.5rem;
+    }
 
+    .double-c span {
+      background: linear-gradient(135deg, #ecdcaa, #c2a164);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 3rem;
+    }
 
-    -taste-main {
+    .coco-taste-main {
       font-size: 3.8rem;
       font-family: 'Cormorant Garamond', serif;
       font-weight: 500;
@@ -299,6 +315,49 @@
       color: #d4af7a;
     }
 
+    /* New section: Footer Image Container — places the PNG next to footer */
+    .footer-image-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      padding: 1rem 1rem 0.5rem;
+      border-top: 1px solid rgba(212, 175, 122, 0.2);
+    }
+
+    .footer-side-image {
+      flex: 0 0 220px;
+      text-align: center;
+    }
+
+    .footer-side-image img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid rgba(212, 175, 122, 0.5);
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s ease;
+      filter: brightness(0.98) contrast(1.02);
+      background: #0a0705;
+    }
+
+    .footer-side-image img:hover {
+      border-color: #d4af7a;
+      transform: scale(1.02);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.8);
+    }
+
+    .footer-text-complement {
+      flex: 1;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      opacity: 0.8;
+      font-weight: 300;
+    }
+
     @media (max-width: 760px) {
       .content {
         padding: 1.2rem;
@@ -328,6 +387,14 @@
         padding-left: 0;
         border-top: 1px solid rgba(212, 175, 122, 0.4);
         padding-top: 1rem;
+      }
+      .footer-image-section {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .footer-side-image {
+        flex: 0 0 auto;
+        width: 180px;
       }
     }
   </style>
@@ -404,7 +471,7 @@
       <span style="font-size: 1rem; letter-spacing: 6px;">CHANEL</span>
     </div>
 
-    <!-- Footer with CHANEL elegance -->
+    <!-- Footer with CHANEL elegance (original footer) -->
     <div class="footer-heritage">
       <div class="footer-chains">
         <span>CHANEL</span> <span>✦</span> <span>CHANEL</span> <span>✦</span> <span>CHANEL</span>
@@ -414,7 +481,21 @@
         <span>PARIS</span> <span>✦</span> <span>CHANEL</span>
       </div>
     </div>
-    <div style="text-align: center; margin-top: 1.5rem; font-size: 0.6rem; opacity: 0.6; letter-spacing: 2px;">
+
+    <!-- === NEW SECTION: PICTURE "A Taste Of Chanel (4).png" placed next to footer === -->
+    <div class="footer-image-section">
+      <div class="footer-side-image">
+        <img src="data:image/png;base64,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"
+             alt="A Taste of Chanel elegant artwork" 
+             title="A Taste Of Chanel — Timeless Elegance">
+      </div>
+      <div class="footer-text-complement">
+        ✦ A TASTE OF CHANEL ✦<br>
+        Timeless elegance, culinary poetry & couture spirit
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 1rem; font-size: 0.6rem; opacity: 0.6; letter-spacing: 2px; padding-bottom: 0.5rem;">
       A TASTE OF CHANEL — ETERNAL ELEGANCE
     </div>
   </div>
@@ -455,3 +536,4 @@
 
 </body>
 </html>
+```
