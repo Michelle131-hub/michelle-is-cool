@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remove "C C" From Front</title>
+    <title>Remove First "C C" Only</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #f0f0f0;
         }
         
         .container {
@@ -20,142 +20,166 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .original-text {
-            background-color: #fff3cd;
+        .text-box {
+            background-color: #f8f9fa;
             padding: 15px;
-            border-left: 4px solid #ffc107;
-            margin: 20px 0;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
         }
         
-        .modified-text {
+        .original {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .modified {
             background-color: #d4edda;
-            padding: 15px;
             border-left: 4px solid #28a745;
-            margin: 20px 0;
         }
         
         button {
-            background-color: #007bff;
+            background-color: #dc3545;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
             margin: 10px 5px;
+            font-weight: bold;
         }
         
         button:hover {
+            background-color: #c82333;
+        }
+        
+        .reset-btn {
+            background-color: #007bff;
+        }
+        
+        .reset-btn:hover {
             background-color: #0056b3;
         }
         
         h2 {
             color: #333;
+            margin-top: 0;
         }
         
-        .example-text {
+        .content {
             font-size: 18px;
             padding: 10px;
-            margin: 10px 0;
-            background-color: #e9ecef;
+            background-color: white;
             border-radius: 5px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Remove "C C" From Front of Text</h1>
+        <h1>Remove ONLY the First "C C"</h1>
+        <p>This will remove the first occurrence of "C C" at the beginning of each text.</p>
         
-        <div class="original-text">
-            <strong>Original Text (with "C C" at front):</strong>
-            <div id="originalDisplay" class="example-text">C C Hello, this is some sample text!</div>
-            <div id="originalDisplay2" class="example-text">C C Another example with C C in front</div>
-            <div id="originalDisplay3" class="example-text">C C This text also starts with C C</div>
+        <div class="text-box original">
+            <strong>📝 Original Text:</strong>
+            <div class="content" id="originalText1">C C Hello world C C</div>
         </div>
         
-        <div class="modified-text">
-            <strong>Modified Text (after removing "C C"):</strong>
-            <div id="modifiedDisplay" class="example-text">Waiting for action...</div>
-            <div id="modifiedDisplay2" class="example-text">Waiting for action...</div>
-            <div id="modifiedDisplay3" class="example-text">Waiting for action...</div>
+        <div class="text-box modified">
+            <strong>✨ After Removing First "C C":</strong>
+            <div class="content" id="modifiedText1">---</div>
         </div>
         
-        <div style="text-align: center;">
-            <button onclick="removeCCFromFront()">Remove "C C" From All Texts</button>
-            <button onclick="resetTexts()">Reset to Original</button>
+        <div class="text-box original">
+            <strong>📝 Original Text:</strong>
+            <div class="content" id="originalText2">C C This is a test C C C C</div>
         </div>
         
-        <div style="margin-top: 20px; padding: 15px; background-color: #e7f3ff; border-radius: 5px;">
-            <strong>Instructions:</strong>
-            <p>Click the "Remove 'C C' From All Texts" button to remove "C C" from the beginning of each text block.</p>
+        <div class="text-box modified">
+            <strong>✨ After Removing First "C C":</strong>
+            <div class="content" id="modifiedText2">---</div>
+        </div>
+        
+        <div class="text-box original">
+            <strong>📝 Original Text:</strong>
+            <div class="content" id="originalText3">C C Just one at the front</div>
+        </div>
+        
+        <div class="text-box modified">
+            <strong>✨ After Removing First "C C":</strong>
+            <div class="content" id="modifiedText3">---</div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button onclick="removeFirstCC()">🗑️ Remove FIRST "C C" Only</button>
+            <button class="reset-btn" onclick="resetAll()">🔄 Reset All</button>
+        </div>
+        
+        <div style="margin-top: 20px; padding: 10px; background-color: #e7f3ff; border-radius: 5px; font-size: 14px;">
+            <strong>ℹ️ Note:</strong> Only the <strong>FIRST</strong> "C C" at the beginning is removed. Any additional "C C" later in the text stays.
         </div>
     </div>
 
     <script>
         // Store original texts
-        let originalTexts = [
-            "C C Hello, this is some sample text!",
-            "C C Another example with C C in front",
-            "C C This text also starts with C C"
+        const texts = [
+            "C C Hello world C C",
+            "C C This is a test C C C C", 
+            "C C Just one at the front"
         ];
         
-        let modifiedTexts = [...originalTexts];
+        let currentTexts = [...texts];
         
-        // Function to remove "C C" from the front of a string
-        function removeCCFromFrontOfString(text) {
-            // Check if text starts with "C C"
+        // Function to remove ONLY the first "C C" from the front
+        function removeFirstCCFromString(text) {
+            // Check if the text starts with "C C"
             if (text.startsWith("C C")) {
-                // Remove the first 4 characters (C space C) and trim any extra space
-                return text.substring(3).trimStart(); // substring(3) removes "C C"
+                // Remove only the first "C C" (3 characters: C, space, C)
+                return text.substring(3).trimStart();
             }
             return text;
         }
         
-        // Function to update the display
+        // Update all displays
         function updateDisplay() {
-            document.getElementById("modifiedDisplay").textContent = modifiedTexts[0];
-            document.getElementById("modifiedDisplay2").textContent = modifiedTexts[1];
-            document.getElementById("modifiedDisplay3").textContent = modifiedTexts[2];
+            for (let i = 0; i < currentTexts.length; i++) {
+                document.getElementById(`modifiedText${i+1}`).textContent = currentTexts[i];
+            }
         }
         
-        // Main function to remove "C C" from all texts
-        function removeCCFromFront() {
-            for (let i = 0; i < modifiedTexts.length; i++) {
-                modifiedTexts[i] = removeCCFromFrontOfString(modifiedTexts[i]);
+        // Remove first "C C" from all texts
+        function removeFirstCC() {
+            for (let i = 0; i < currentTexts.length; i++) {
+                currentTexts[i] = removeFirstCCFromString(currentTexts[i]);
             }
             updateDisplay();
             
-            // Change button appearance to show action was taken
+            // Visual feedback
             let btn = event.target;
+            let originalColor = btn.style.backgroundColor;
             btn.style.backgroundColor = "#28a745";
             setTimeout(() => {
-                btn.style.backgroundColor = "#007bff";
-            }, 500);
+                btn.style.backgroundColor = "#dc3545";
+            }, 300);
         }
         
-        // Reset to original texts
-        function resetTexts() {
-            modifiedTexts = [...originalTexts];
+        // Reset all texts to original
+        function resetAll() {
+            currentTexts = [...texts];
             updateDisplay();
         }
         
-        // Display original texts
-        function displayOriginalTexts() {
-            document.getElementById("originalDisplay").textContent = originalTexts[0];
-            document.getElementById("originalDisplay2").textContent = originalTexts[1];
-            document.getElementById("originalDisplay3").textContent = originalTexts[2];
+        // Initialize display with original texts
+        function init() {
+            for (let i = 0; i < texts.length; i++) {
+                document.getElementById(`originalText${i+1}`).textContent = texts[i];
+            }
+            updateDisplay();
         }
         
-        // Initialize the page
-        displayOriginalTexts();
-        updateDisplay();
-        
-        // Add keyboard shortcut (press 'R' to reset)
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'r' || event.key === 'R') {
-                resetTexts();
-            }
-        });
+        // Start the page
+        init();
     </script>
 </body>
 </html>
