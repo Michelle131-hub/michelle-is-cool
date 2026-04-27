@@ -1,474 +1,161 @@
-Here is an HTML document that creates a brand tribute page, directly incorporating the visual text and iconic elements from your "A Taste of Chanel (3).png" image.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>A Taste of Chanel | Iconic Tribute</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #050302;
-      font-family: 'Montserrat', sans-serif;
-      color: #ede6db;
-      line-height: 1.4;
-    }
-
-    /* main canvas — deep black & gold atmosphere */
-    .chanel-atelier {
-      max-width: 1400px;
-      margin: 0 auto;
-      background: radial-gradient(circle at 25% 15%, #161110, #010101);
-      box-shadow: 0 0 85px rgba(0, 0, 0, 0.9);
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* subtle luxury grain overlay */
-    .chanel-atelier::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.028"><path fill="none" d="M0 0h200v200H0z"/><path d="M20 40L180 40M20 80L180 80M20 120L180 120M20 160L180 160M60 20L60 180M100 20L100 180M140 20L140 180" stroke="%23d4af7a" stroke-width="0.7"/><circle cx="100" cy="100" r="18" stroke="%23d4af7a" stroke-width="0.6" fill="none"/></svg>');
-      background-repeat: repeat;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .content {
-      position: relative;
-      z-index: 2;
-      padding: 2rem 2rem 4rem;
-    }
-
-    /* gold & elegant accents */
-    .gold-text {
-      color: #d4af7a;
-    }
-
-    .gold-border-bottom {
-      border-bottom: 2px solid rgba(212, 175, 122, 0.4);
-    }
-
-    hr.gold-rule {
-      width: 70px;
-      height: 2px;
-      background: #d4af7a;
-      border: none;
-      margin: 1rem auto;
-    }
-
-    /* main header with GABRIELLE "COCO" CHANEL */
-    .chanel-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .gabrielle-name {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      font-weight: 300;
-      color: #c9b185;
-      margin-bottom: 0.75rem;
-    }
-
-    .double-c {
-      display: flex;
-      justify-content: center;
-      gap: 0.9rem;
-      font-size: 3rem;
-      font-family: 'Cormorant Garamond', serif;
-      letter-spacing: 8px;
-      margin-bottom: 0.5rem;
-    }
-
-    .double-c span {
-      background: linear-gradient(135deg, #ecdcaa, #c2a164);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-size: 3rem;
-    }
-
-    .coco-taste-main {
-      font-size: 3.8rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 500;
-      letter-spacing: 6px;
-      line-height: 1.2;
-      margin-top: 0.5rem;
-    }
-
-    .coco-taste-main .coco {
-      font-style: italic;
-      background: linear-gradient(135deg, #fef0db, #d9b97a);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    /* master image from PNG concept — but we recreate the textual layout exactly as the PNG */
-    .visual-tribute {
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(212, 175, 122, 0.4);
-      margin: 1.5rem 0 2rem;
-      padding: 1.5rem 1rem;
-      backdrop-filter: blur(3px);
-      box-shadow: 0 15px 30px -10px black;
-    }
-
-    .tribute-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.2rem;
-    }
-
-    .quote-fragment {
-      flex: 2;
-      text-align: center;
-      border-left: 2px solid #d4af7a;
-      padding-left: 1.5rem;
-    }
-
-    .quote-fragment .life-quote {
-      font-size: 1.5rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 500;
-      letter-spacing: 1px;
-      line-height: 1.3;
-    }
-
-    .chanel-stamp {
-      flex: 1;
-      text-align: center;
-    }
-
-    .chanel-stamp .brand-block {
-      font-size: 1.4rem;
-      letter-spacing: 5px;
-      font-weight: 500;
-      font-family: 'Cormorant Garamond', serif;
-      border-top: 1px solid rgba(212, 175, 122, 0.5);
-      border-bottom: 1px solid rgba(212, 175, 122, 0.5);
-      display: inline-block;
-      padding: 0.3rem 1rem;
-    }
-
-    /* dine with us section mimicking PNG */
-    .dine-elegance {
-      display: flex;
-      flex-wrap: wrap;
-      background: rgba(0, 0, 0, 0.5);
-      margin: 2.5rem 0;
-      padding: 1.8rem 2rem;
-      border: 1px solid rgba(212, 175, 122, 0.35);
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .dine-text h2 {
-      font-size: 2.6rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 500;
-      letter-spacing: 6px;
-    }
-
-    .dine-text p {
-      font-weight: 300;
-      font-size: 0.9rem;
-      max-width: 400px;
-      margin-top: 0.5rem;
-      line-height: 1.5;
-    }
-
-    .reserve-cta {
-      background: transparent;
-      border: 1.5px solid #d4af7a;
-      color: #d4af7a;
-      padding: 0.75rem 2rem;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 1rem;
-    }
-
-    .reserve-cta:hover {
-      background: #d4af7a;
-      color: #0a0705;
-      box-shadow: 0 0 12px rgba(212, 175, 122, 0.6);
-    }
-
-    .dine-icon-couture {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      border: 1px solid rgba(212, 175, 122, 0.6);
-      padding: 0.6rem 1rem;
-      transform: rotate(1deg);
-    }
-
-    /* manifesto: "I don't do fashion I am fashion" */
-    .fashion-manifesto {
-      background: #0b0806;
-      padding: 2rem;
-      text-align: center;
-      margin: 2rem 0;
-      border-top: 1px solid #2f261f;
-      border-bottom: 1px solid #2f261f;
-    }
-
-    .manifesto-quote {
-      font-size: 1.9rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      letter-spacing: 1px;
-    }
-
-    /* brand pillars: CHANEL repeated — exactly from PNG concept */
-    .pillars-showcase {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.8rem;
-      margin: 2.5rem 0 2rem;
-    }
-
-    .pillar-item {
-      background: rgba(15, 12, 10, 0.7);
-      backdrop-filter: blur(3px);
-      padding: 1.2rem 0.5rem;
-      width: 145px;
-      text-align: center;
-      transition: 0.2s ease;
-      border-bottom: 2px solid rgba(212, 175, 122, 0.4);
-    }
-
-    .pillar-item .chanel-name {
-      font-size: 1.2rem;
-      letter-spacing: 5px;
-      font-weight: 500;
-      color: #e2cfaa;
-    }
-
-    .pillar-item .sub {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      margin-top: 0.5rem;
-      opacity: 0.8;
-    }
-
-    /* CHANEL PARIS block exactly from PNG */
-    .paris-glow {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .paris-block {
-      display: inline-block;
-      font-size: 1.8rem;
-      font-family: 'Cormorant Garamond', serif;
-      letter-spacing: 8px;
-      border-top: 1px solid #d4af7a;
-      border-bottom: 1px solid #d4af7a;
-      padding: 0.5rem 1.2rem;
-    }
-
-    /* signature footer */
-    .footer-heritage {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid #2f281f;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .footer-chains span {
-      margin: 0 12px;
-    }
-
-    .coco-sig {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #d4af7a;
-    }
-
-    @media (max-width: 760px) {
-      .content {
-        padding: 1.2rem;
-      }
-      .coco-taste-main {
-        font-size: 2.4rem;
-      }
-      .manifesto-quote {
-        font-size: 1.3rem;
-      }
-      .dine-text h2 {
-        font-size: 2rem;
-      }
-      .quote-fragment .life-quote {
-        font-size: 1.1rem;
-      }
-      .paris-block {
-        font-size: 1.2rem;
-        letter-spacing: 4px;
-      }
-      .tribute-grid {
-        flex-direction: column;
-        text-align: center;
-      }
-      .quote-fragment {
-        border-left: none;
-        padding-left: 0;
-        border-top: 1px solid rgba(212, 175, 122, 0.4);
-        padding-top: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove "C C" From Front</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .original-text {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        
+        .modified-text {
+            background-color: #d4edda;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        .example-text {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-<div class="chanel-atelier">
-  <div class="content">
-
-    <!-- HEADER: GABRIELLE "COCO" CHANEL + COCO TASTE OF CHANEL -->
-    <div class="chanel-header">
-      <div class="gabrielle-name">GABRIELLE "COCO" CHANEL</div>
-      <div class="double-c">
-        <span>C</span><span>C</span>
-      </div>
-      <div class="coco-taste-main">
-        <span class="coco">COCO</span> TASTE<br>
-        <span style="font-size: 0.7em; letter-spacing: 8px;">OF CHANEL</span>
-      </div>
-      <hr class="gold-rule">
-    </div>
-
-    <!-- VISUAL TRIBUTE (accurately matching the PNG content layout) -->
-    <div class="visual-tribute">
-      <div class="tribute-grid">
-        <div class="quote-fragment">
-          <div class="life-quote">
-            “MY LIFE DIDN'T PLEASE ME,<br> SO I CREATED MY LIFE.”
-          </div>
-          <div style="font-size:0.65rem; letter-spacing: 2px; margin-top: 10px;">— GABRIELLE CHANEL</div>
+    <div class="container">
+        <h1>Remove "C C" From Front of Text</h1>
+        
+        <div class="original-text">
+            <strong>Original Text (with "C C" at front):</strong>
+            <div id="originalDisplay" class="example-text">C C Hello, this is some sample text!</div>
+            <div id="originalDisplay2" class="example-text">C C Another example with C C in front</div>
+            <div id="originalDisplay3" class="example-text">C C This text also starts with C C</div>
         </div>
-        <div class="chanel-stamp">
-          <div class="brand-block">CHANEL</div>
-          <div class="brand-block" style="margin-top: 8px;">CHANEL</div>
+        
+        <div class="modified-text">
+            <strong>Modified Text (after removing "C C"):</strong>
+            <div id="modifiedDisplay" class="example-text">Waiting for action...</div>
+            <div id="modifiedDisplay2" class="example-text">Waiting for action...</div>
+            <div id="modifiedDisplay3" class="example-text">Waiting for action...</div>
         </div>
-      </div>
+        
+        <div style="text-align: center;">
+            <button onclick="removeCCFromFront()">Remove "C C" From All Texts</button>
+            <button onclick="resetTexts()">Reset to Original</button>
+        </div>
+        
+        <div style="margin-top: 20px; padding: 15px; background-color: #e7f3ff; border-radius: 5px;">
+            <strong>Instructions:</strong>
+            <p>Click the "Remove 'C C' From All Texts" button to remove "C C" from the beginning of each text block.</p>
+        </div>
     </div>
 
-    <!-- Dine with Us Section from the PNG -->
-    <div class="dine-elegance">
-      <div class="dine-text">
-        <h2>Dine with Us</h2>
-        <p>A Taste of Chanel — Gastronomy & Couture. An exclusive evening where elegance meets culinary artistry. Inspired by Coco’s legendary gatherings.</p>
-        <button class="reserve-cta" id="reserveBtn">Reserve Experience</button>
-      </div>
-      <div class="dine-icon-couture">
-        CHANEL<br>COUTURE<br>CAFÉ
-      </div>
-    </div>
-
-    <!-- Iconic quote: “I don't do fashion I am fashion” (exactly from PNG) -->
-    <div class="fashion-manifesto">
-      <div class="manifesto-quote">“I don't do fashion — I am fashion”</div>
-      <div style="font-size: 0.7rem; letter-spacing: 3px; margin-top: 0.6rem;">— COCO CHANEL</div>
-    </div>
-
-    <!-- CHANEL repeated pillars exactly as designed in PNG: CHANEL / CHANEL / CHANEL / PARIS / CHANEL / CHANEL -->
-    <div class="pillars-showcase">
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">PARIS</div></div>
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">MODE</div></div>
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">HAUTE</div></div>
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">JOAILLERIE</div></div>
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">PARFUM</div></div>
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">COUTURE</div></div>
-    </div>
-
-    <!-- PARIS CHANEL special block from PNG's lower section -->
-    <div class="paris-glow">
-      <div class="paris-block">CHANEL ✦ PARIS ✦ CHANEL</div>
-    </div>
-
-    <!-- Additional CHANEL CHANEL line to match spirit -->
-    <div style="text-align: center; margin: 1rem 0 2rem;">
-      <span style="font-size: 1rem; letter-spacing: 6px;">CHANEL</span> &nbsp;&nbsp;✦&nbsp;&nbsp; 
-      <span style="font-size: 1rem; letter-spacing: 6px;">CHANEL</span>
-    </div>
-
-    <!-- Footer with CHANEL elegance -->
-    <div class="footer-heritage">
-      <div class="footer-chains">
-        <span>CHANEL</span> <span>✦</span> <span>CHANEL</span> <span>✦</span> <span>CHANEL</span>
-      </div>
-      <div class="coco-sig">COCO TASTE</div>
-      <div class="footer-chains">
-        <span>PARIS</span> <span>✦</span> <span>CHANEL</span>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 1.5rem; font-size: 0.6rem; opacity: 0.6; letter-spacing: 2px;">
-      A TASTE OF CHANEL — ETERNAL ELEGANCE
-    </div>
-  </div>
-</div>
-
-<script>
-  // Interactive dining reservation button
-  const reserveButton = document.getElementById('reserveBtn');
-  if (reserveButton) {
-    reserveButton.addEventListener('click', () => {
-      alert('✨ “A Taste of Chanel” — An exclusive gastronomic journey awaits. Please contact the Chanel concierge: +33 (0)1 42 86 28 00. Elegance is an attitude. ✨');
-    });
-  }
-
-  // subtle hover effect in console (purely for charm)
-  const pillars = document.querySelectorAll('.pillar-item');
-  pillars.forEach(p => {
-    p.addEventListener('click', () => {
-      console.log('Chanel — timeless elegance');
-    });
-  });
-
-  // dynamic style addition for interactive finesse
-  const extraStyle = document.createElement('style');
-  extraStyle.textContent = `
-    .pillar-item:hover .chanel-name {
-      color: #f3e5c9;
-      text-shadow: 0 0 2px #b58d46;
-      transition: 0.2s;
-    }
-    .visual-tribute:hover {
-      border-color: #d4af7a;
-      transition: 0.25s;
-    }
-  `;
-  document.head.appendChild(extraStyle);
-</script>
-
+    <script>
+        // Store original texts
+        let originalTexts = [
+            "C C Hello, this is some sample text!",
+            "C C Another example with C C in front",
+            "C C This text also starts with C C"
+        ];
+        
+        let modifiedTexts = [...originalTexts];
+        
+        // Function to remove "C C" from the front of a string
+        function removeCCFromFrontOfString(text) {
+            // Check if text starts with "C C"
+            if (text.startsWith("C C")) {
+                // Remove the first 4 characters (C space C) and trim any extra space
+                return text.substring(3).trimStart(); // substring(3) removes "C C"
+            }
+            return text;
+        }
+        
+        // Function to update the display
+        function updateDisplay() {
+            document.getElementById("modifiedDisplay").textContent = modifiedTexts[0];
+            document.getElementById("modifiedDisplay2").textContent = modifiedTexts[1];
+            document.getElementById("modifiedDisplay3").textContent = modifiedTexts[2];
+        }
+        
+        // Main function to remove "C C" from all texts
+        function removeCCFromFront() {
+            for (let i = 0; i < modifiedTexts.length; i++) {
+                modifiedTexts[i] = removeCCFromFrontOfString(modifiedTexts[i]);
+            }
+            updateDisplay();
+            
+            // Change button appearance to show action was taken
+            let btn = event.target;
+            btn.style.backgroundColor = "#28a745";
+            setTimeout(() => {
+                btn.style.backgroundColor = "#007bff";
+            }, 500);
+        }
+        
+        // Reset to original texts
+        function resetTexts() {
+            modifiedTexts = [...originalTexts];
+            updateDisplay();
+        }
+        
+        // Display original texts
+        function displayOriginalTexts() {
+            document.getElementById("originalDisplay").textContent = originalTexts[0];
+            document.getElementById("originalDisplay2").textContent = originalTexts[1];
+            document.getElementById("originalDisplay3").textContent = originalTexts[2];
+        }
+        
+        // Initialize the page
+        displayOriginalTexts();
+        updateDisplay();
+        
+        // Add keyboard shortcut (press 'R' to reset)
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'r' || event.key === 'R') {
+                resetTexts();
+            }
+        });
+    </script>
 </body>
 </html>
-```
