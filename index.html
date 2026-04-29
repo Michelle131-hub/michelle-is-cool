@@ -1,11 +1,11 @@
-Here is an HTML document that enlarges the footer image and adds a second image as a full-width intro at the top.
+Here is an HTML document that transforms the footer into a premium photo gallery display, with the image enlarged and presented in an elegant frame.
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>A Taste of Chanel | Coco Chanel Tribute</title>
+  <title>A Taste of Chanel | Coco Chanel Tribute | Photo Gallery</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -376,21 +376,131 @@ Here is an HTML document that enlarges the footer image and adds a second image 
       font-family: 'Cormorant Garamond', serif;
     }
 
-    /* FOOTER with BIGGER image */
-    .final-footer {
+    /* ========== PHOTO GALLERY FOOTER SECTION ========== */
+    /* Transforms footer into an elegant art gallery display */
+    .photo-gallery-footer {
       margin-top: 4rem;
       text-align: center;
-      border-top: 1px solid #2f281f;
-      padding: 2rem 1rem 2rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      border-top: 2px solid rgba(212, 175, 122, 0.5);
+      padding: 3rem 1.5rem 2.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(10,8,7,0.5));
+      position: relative;
+      z-index: 2;
     }
 
+    /* gallery header with decorative elements */
+    .gallery-header {
+      margin-bottom: 2rem;
+    }
+
+    .gallery-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #d4af7a;
+      font-weight: 300;
+    }
+
+    .gallery-subtitle {
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #9a8a6f;
+      margin-top: 0.5rem;
+    }
+
+    .gallery-divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #d4af7a, transparent);
+      margin: 1rem auto;
+    }
+
+    /* premium framed image container — like a museum gallery piece */
+    .gallery-frame {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 2rem auto;
+      position: relative;
+    }
+
+    /* ornate frame effect */
+    .gallery-frame::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      right: -12px;
+      bottom: -12px;
+      background: linear-gradient(135deg, rgba(212,175,122,0.2), rgba(212,175,122,0.05));
+      border: 1px solid rgba(212,175,122,0.4);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .gallery-frame-inner {
+      background: #0c0907;
+      padding: 16px 16px 20px 16px;
+      box-shadow: 0 30px 50px -20px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.05);
+      border: 1px solid #2a241e;
+    }
+
+    /* THE ENLARGED GALLERY IMAGE — like a photo gallery centerpiece */
+    .gallery-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      max-height: 620px;
+      width: auto;
+      min-width: 300px;
+      object-fit: contain;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      filter: brightness(1.02) contrast(1.02);
+      background: #0a0806;
+    }
+
+    .gallery-image:hover {
+      transform: scale(1.01);
+      filter: brightness(1.05) contrast(1.03);
+      cursor: pointer;
+    }
+
+    /* gallery meta info (like an art gallery label) */
+    .gallery-meta {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #bfaa8a;
+    }
+
+    .gallery-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gallery-meta .dot {
+      width: 4px;
+      height: 4px;
+      background: #d4af7a;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* brand row inside footer */
     .footer-brand-row {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 1.2rem;
-      margin-bottom: 2rem;
+      margin: 2rem 0 1rem;
       font-size: 0.7rem;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -403,34 +513,6 @@ Here is an HTML document that enlarges the footer image and adds a second image 
     .footer-brand-row .divider {
       color: #d4af7a;
       opacity: 0.6;
-    }
-
-    /* BIGGER footer image container — enlarged size */
-    .footer-image {
-      max-width: 100%;
-      display: flex;
-      justify-content: center;
-      margin: 1.5rem auto 2rem;
-    }
-
-    .footer-image img {
-      max-width: 90%;
-      width: auto;
-      height: auto;
-      max-height: 420px;      /* MUCH BIGGER presence */
-      min-width: 260px;
-      border-radius: 4px;
-      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.7);
-      border: 1px solid rgba(212, 175, 122, 0.5);
-      transition: transform 0.3s ease, border-color 0.2s;
-      background: #0a0806;
-      object-fit: contain;
-    }
-
-    .footer-image img:hover {
-      transform: scale(1.02);
-      border-color: #d4af7a;
-      box-shadow: 0 25px 40px -10px rgba(212, 175, 122, 0.25);
     }
 
     .final-credit {
@@ -446,6 +528,31 @@ Here is an HTML document that enlarges the footer image and adds a second image 
       height: 2px;
       background: #d4af7a;
       margin: 1rem auto;
+    }
+
+    /* Lightbox/modal effect for the gallery image (optional but adds gallery feel) */
+    .lightbox-active {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 2000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s;
+    }
+
+    .lightbox-active img {
+      max-width: 90%;
+      max-height: 85%;
+      object-fit: contain;
+      border: 2px solid #d4af7a;
+      box-shadow: 0 0 50px rgba(0,0,0,0.8);
     }
 
     /* responsiveness */
@@ -469,21 +576,27 @@ Here is an HTML document that enlarges the footer image and adds a second image 
       .manifesto p {
         font-size: 1.2rem;
       }
-      .footer-image img {
-        max-height: 260px;
-        max-width: 95%;
-      }
       .hero-image {
         max-height: 280px;
+      }
+      .gallery-image {
+        max-height: 380px;
+      }
+      .gallery-title {
+        font-size: 1.2rem;
+        letter-spacing: 4px;
+      }
+      .gallery-frame-inner {
+        padding: 10px 10px 14px 10px;
       }
     }
 
     @media (min-width: 1200px) {
-      .footer-image img {
-        max-height: 500px;
-      }
       .hero-image {
         max-height: 550px;
+      }
+      .gallery-image {
+        max-height: 700px;
       }
     }
   </style>
@@ -579,20 +692,39 @@ Here is an HTML document that enlarges the footer image and adds a second image 
     </div>
   </div>
 
-  <!-- FOOTER SECTION with BIGGER IMAGE: "A Taste of Chanel (4).png" enlarged -->
-  <div class="final-footer">
+  <!-- ========== PHOTO GALLERY FOOTER SECTION ========== -->
+  <!-- Image "A Taste of Chanel (4).png" displayed as a premium gallery piece, enlarged and framed like an art exhibit -->
+  <div class="photo-gallery-footer">
+    <div class="gallery-header">
+      <div class="gallery-title">✦ CHANEL IMAGERY ✦</div>
+      <div class="gallery-subtitle">A Taste of Elegance — Archival Collection</div>
+      <div class="gallery-divider"></div>
+    </div>
+
+    <!-- Framed gallery image — enlarged and presented like a museum photo gallery -->
+    <div class="gallery-frame">
+      <div class="gallery-frame-inner">
+        <img class="gallery-image" src="A Taste of Chanel (4).png" alt="A Taste of Chanel Gallery - Enlarged Fine Art Print" id="galleryImg" onerror="this.onerror=null; this.alt='A Taste of Chanel (4).png - Gallery Image'; this.style.opacity='0.8';">
+      </div>
+    </div>
+
+    <!-- Gallery metadata / art label (adds to the gallery aesthetic) -->
+    <div class="gallery-meta">
+      <span>📸 "A TASTE OF CHANEL"</span>
+      <span class="dot"></span>
+      <span>ARCHIVAL PIGMENT PRINT</span>
+      <span class="dot"></span>
+      <span>ÉDITION LIMITÉE</span>
+    </div>
+
+    <!-- brand row with classic Chanel repetition -->
     <div class="footer-brand-row">
       <span>CHANEL</span> <span class="divider">✦</span> <span>CHANEL</span> <span class="divider">✦</span> <span>CHANEL</span>
       <span class="divider">|</span> <span>PARIS</span> <span class="divider">✦</span> <span>COCO TASTE</span>
     </div>
     
-    <!-- LARGER FOOTER IMAGE -->
-    <div class="footer-image">
-      <img src="A Taste of Chanel (4).png" alt="A Taste of Chanel Signature - enlarged" onerror="this.onerror=null; this.alt='A Taste of Chanel (4).png'; this.style.opacity='0.7';">
-    </div>
-    
     <div class="final-credit">
-      A TASTE OF CHANEL — ETERNAL ELEGANCE
+      A TASTE OF CHANEL — ETERNAL ELEGANCE — HAUTE PHOTOGRAPHIE
     </div>
   </div>
 </div>
@@ -628,6 +760,49 @@ Here is an HTML document that enlarges the footer image and adds a second image 
     }
   `;
   document.head.appendChild(style);
+
+  // ========== LIGHTBOX / GALLERY MODAL (enhances the gallery feel) ==========
+  // When clicking on the gallery image, it opens a fullscreen lightbox for an immersive gallery experience
+  const galleryImg = document.getElementById('galleryImg');
+  if (galleryImg) {
+    galleryImg.addEventListener('click', function(e) {
+      // Create lightbox overlay
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-active';
+      const clonedImg = document.createElement('img');
+      clonedImg.src = this.src;
+      clonedImg.alt = this.alt + " — Enlarged view";
+      // Add close functionality
+      lightbox.appendChild(clonedImg);
+      lightbox.addEventListener('click', function() {
+        document.body.removeChild(lightbox);
+      });
+      // Prevent body scroll while lightbox is open
+      document.body.style.overflow = 'hidden';
+      lightbox.addEventListener('click', () => {
+        document.body.style.overflow = '';
+      });
+      document.body.appendChild(lightbox);
+    });
+  }
+
+  // Additional graceful handling if hero image also wants click (optional but consistent)
+  const heroImg = document.querySelector('.hero-image');
+  if (heroImg) {
+    heroImg.addEventListener('click', function() {
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-active';
+      const clonedImg = document.createElement('img');
+      clonedImg.src = this.src;
+      lightbox.appendChild(clonedImg);
+      lightbox.addEventListener('click', function() {
+        document.body.removeChild(lightbox);
+        document.body.style.overflow = '';
+      });
+      document.body.style.overflow = 'hidden';
+      document.body.appendChild(lightbox);
+    });
+  }
 </script>
 </body>
 </html>
