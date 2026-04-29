@@ -1,12 +1,12 @@
-Here is an updated HTML document that places your "A Taste of Chanel (4).png" image next to the footer, integrated into the elegant tribute design.
+Here is an HTML document that places the "A Taste of Chanel (4).png" image at the bottom footer of the brand tribute page.
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>A Taste of Chanel | Iconic Tribute</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>A Taste of Chanel | Tribute to Coco Chanel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,31 +15,30 @@ Here is an updated HTML document that places your "A Taste of Chanel (4).png" im
     }
 
     body {
-      background-color: #050302;
+      background-color: #0a0a0a;
       font-family: 'Montserrat', sans-serif;
-      color: #ede6db;
+      color: #e8e0d5;
       line-height: 1.4;
     }
 
-    /* main canvas — deep black & gold atmosphere */
-    .chanel-atelier {
+    /* main container — luxurious dark canvas */
+    .chanel-world {
       max-width: 1400px;
       margin: 0 auto;
-      background: radial-gradient(circle at 25% 15%, #161110, #010101);
-      box-shadow: 0 0 85px rgba(0, 0, 0, 0.9);
+      background: radial-gradient(circle at 20% 30%, #14100e, #030202);
+      box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
       overflow-x: hidden;
-      position: relative;
     }
 
-    /* subtle luxury grain overlay */
-    .chanel-atelier::before {
+    /* texture overlay — subtle grain & elegance */
+    .chanel-world::before {
       content: "";
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.028"><path fill="none" d="M0 0h200v200H0z"/><path d="M20 40L180 40M20 80L180 80M20 120L180 120M20 160L180 160M60 20L60 180M100 20L100 180M140 20L140 180" stroke="%23d4af7a" stroke-width="0.7"/><circle cx="100" cy="100" r="18" stroke="%23d4af7a" stroke-width="0.6" fill="none"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.03"><path fill="none" d="M0 0h200v200H0z"/><path d="M30 30L170 30M30 70L170 70M30 110L170 110M30 150L170 150M70 30L70 170M110 30L110 170M150 30L150 170" stroke="%23ffffff" stroke-width="1"/><circle cx="100" cy="100" r="20" stroke="%23ffffff" stroke-width="0.8" fill="none"/></svg>');
       background-repeat: repeat;
       pointer-events: none;
       z-index: 0;
@@ -48,492 +47,519 @@ Here is an updated HTML document that places your "A Taste of Chanel (4).png" im
     .content {
       position: relative;
       z-index: 2;
-      padding: 2rem 2rem 4rem;
+      padding: 2rem 2rem 2rem;
     }
 
-    /* gold & elegant accents */
-    .gold-text {
+    /* classic chanel typography */
+    h1, h2, h3, .cursive-quote, .signature-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .gold-accent {
       color: #d4af7a;
+      text-shadow: 0 0 4px rgba(212, 175, 122, 0.3);
     }
 
-    .gold-border-bottom {
-      border-bottom: 2px solid rgba(212, 175, 122, 0.4);
-    }
-
-    hr.gold-rule {
-      width: 70px;
-      height: 2px;
-      background: #d4af7a;
-      border: none;
-      margin: 1rem auto;
-    }
-
-    /* main header with GABRIELLE "COCO" CHANEL */
+    /* header section with double C motif */
     .chanel-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(212, 175, 122, 0.3);
+      padding-bottom: 2rem;
     }
 
-    .gabrielle-name {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      font-weight: 300;
-      color: #c9b185;
-      margin-bottom: 0.75rem;
-    }
-
-    .double-c {
+    .cc-symbol {
       display: flex;
       justify-content: center;
-      gap: 0.9rem;
-      font-size: 3rem;
+      gap: 0.8rem;
+      font-size: 3.2rem;
+      font-weight: 600;
       font-family: 'Cormorant Garamond', serif;
-      letter-spacing: 8px;
+      letter-spacing: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .cc-symbol span {
+      background: linear-gradient(135deg, #e5d5b0, #bfa26b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 3rem;
+    }
+
+    .gabrielle {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: 300;
+      color: #bfaa8a;
       margin-bottom: 0.5rem;
     }
 
-    .double-c span {
-      background: linear-gradient(135deg, #ecdcaa, #c2a164);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-size: 3rem;
-    }
-
-    .coco-taste-main {
-      font-size: 3.8rem;
-      font-family: 'Cormorant Garamond', serif;
+    .coco-taste {
+      font-size: 4.5rem;
       font-weight: 500;
-      letter-spacing: 6px;
-      line-height: 1.2;
-      margin-top: 0.5rem;
+      line-height: 1;
+      margin: 0.2rem 0;
     }
 
-    .coco-taste-main .coco {
+    .coco-taste .coco {
       font-style: italic;
-      background: linear-gradient(135deg, #fef0db, #d9b97a);
+      font-weight: 600;
+      background: linear-gradient(135deg, #fff6e5, #d9c394);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    /* master image from PNG concept — but we recreate the textual layout exactly as the PNG */
-    .visual-tribute {
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(212, 175, 122, 0.4);
-      margin: 1.5rem 0 2rem;
-      padding: 1.5rem 1rem;
-      backdrop-filter: blur(3px);
-      box-shadow: 0 15px 30px -10px black;
+    .chanel-paris {
+      font-size: 0.9rem;
+      letter-spacing: 6px;
+      font-weight: 300;
+      margin-top: 0.75rem;
     }
 
-    .tribute-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.2rem;
-    }
-
-    .quote-fragment {
-      flex: 2;
+    /* iconic quote card */
+    .quote-card {
+      background: rgba(10, 8, 7, 0.65);
+      backdrop-filter: blur(5px);
+      border-left: 4px solid #d4af7a;
+      padding: 2rem 2rem;
+      margin: 2rem 0 3rem;
       text-align: center;
-      border-left: 2px solid #d4af7a;
-      padding-left: 1.5rem;
+      border-radius: 1px;
+      box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.6);
     }
 
-    .quote-fragment .life-quote {
-      font-size: 1.5rem;
+    .quote-text {
+      font-size: 2rem;
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 500;
-      letter-spacing: 1px;
+      font-weight: 400;
       line-height: 1.3;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .chanel-stamp {
-      flex: 1;
-      text-align: center;
+    .quote-author {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.7;
     }
 
-    .chanel-stamp .brand-block {
-      font-size: 1.4rem;
-      letter-spacing: 5px;
-      font-weight: 500;
-      font-family: 'Cormorant Garamond', serif;
-      border-top: 1px solid rgba(212, 175, 122, 0.5);
-      border-bottom: 1px solid rgba(212, 175, 122, 0.5);
-      display: inline-block;
-      padding: 0.3rem 1rem;
-    }
-
-    /* dine with us section mimicking PNG */
-    .dine-elegance {
+    /* dine with us section — elegant invitation */
+    .dine-section {
       display: flex;
       flex-wrap: wrap;
-      background: rgba(0, 0, 0, 0.5);
-      margin: 2.5rem 0;
-      padding: 1.8rem 2rem;
-      border: 1px solid rgba(212, 175, 122, 0.35);
       justify-content: space-between;
       align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      margin: 3rem 0;
+      padding: 2rem 2rem;
+      border: 1px solid rgba(212, 175, 122, 0.4);
       gap: 2rem;
     }
 
+    .dine-text {
+      flex: 1;
+    }
+
     .dine-text h2 {
-      font-size: 2.6rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 500;
+      font-size: 3rem;
+      font-weight: 400;
       letter-spacing: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .dine-text .subhead {
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      color: #d4af7a;
     }
 
     .dine-text p {
       font-weight: 300;
-      font-size: 0.9rem;
+      line-height: 1.6;
       max-width: 400px;
-      margin-top: 0.5rem;
-      line-height: 1.5;
     }
 
-    .reserve-cta {
+    .reserve-btn {
       background: transparent;
       border: 1.5px solid #d4af7a;
       color: #d4af7a;
-      padding: 0.75rem 2rem;
+      padding: 0.8rem 2rem;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       letter-spacing: 3px;
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-top: 1rem;
+      margin-top: 1.8rem;
+      backdrop-filter: blur(4px);
     }
 
-    .reserve-cta:hover {
+    .reserve-btn:hover {
       background: #d4af7a;
-      color: #0a0705;
-      box-shadow: 0 0 12px rgba(212, 175, 122, 0.6);
+      color: #0a0a0a;
+      border-color: #d4af7a;
+      box-shadow: 0 0 12px rgba(212, 175, 122, 0.5);
     }
 
-    .dine-icon-couture {
+    .dine-icon {
+      flex: 0 0 180px;
+      text-align: center;
+    }
+
+    .chanel-couture {
+      font-size: 2rem;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
       border: 1px solid rgba(212, 175, 122, 0.6);
-      padding: 0.6rem 1rem;
-      transform: rotate(1deg);
+      display: inline-block;
+      padding: 0.8rem 1.2rem;
+      transform: rotate(2deg);
     }
 
-    /* manifesto: "I don't do fashion I am fashion" */
-    .fashion-manifesto {
-      background: #0b0806;
-      padding: 2rem;
+    /* fashion manifesto row */
+    .manifesto {
+      background: #080605;
+      padding: 2.2rem;
       text-align: center;
       margin: 2rem 0;
-      border-top: 1px solid #2f261f;
-      border-bottom: 1px solid #2f261f;
+      border-top: 1px solid #2a241e;
+      border-bottom: 1px solid #2a241e;
     }
 
-    .manifesto-quote {
-      font-size: 1.9rem;
+    .manifesto p {
+      font-size: 1.6rem;
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       letter-spacing: 1px;
     }
 
-    /* brand pillars: CHANEL repeated — exactly from PNG concept */
-    .pillars-showcase {
+    /* Gallery / brand pillars: CHANEL repeated elegantly */
+    .brand-pillars {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.8rem;
-      margin: 2.5rem 0 2rem;
+      gap: 2rem;
+      margin: 3rem 0;
     }
 
-    .pillar-item {
-      background: rgba(15, 12, 10, 0.7);
-      backdrop-filter: blur(3px);
-      padding: 1.2rem 0.5rem;
-      width: 145px;
+    .pillar {
+      background: rgba(20, 16, 14, 0.7);
+      backdrop-filter: blur(4px);
+      padding: 1.5rem 1rem;
+      width: 160px;
       text-align: center;
-      transition: 0.2s ease;
-      border-bottom: 2px solid rgba(212, 175, 122, 0.4);
+      transition: all 0.2s ease;
+      border-bottom: 2px solid rgba(212, 175, 122, 0.3);
     }
 
-    .pillar-item .chanel-name {
+    .pillar .chanel-brand {
       font-size: 1.2rem;
-      letter-spacing: 5px;
       font-weight: 500;
-      color: #e2cfaa;
+      letter-spacing: 4px;
+      color: #d4c2a5;
     }
 
-    .pillar-item .sub {
-      font-size: 0.65rem;
-      text-transform: uppercase;
+    .pillar .city {
+      font-size: 0.7rem;
       margin-top: 0.5rem;
       opacity: 0.8;
     }
 
-    /* CHANEL PARIS block exactly from PNG */
-    .paris-glow {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .paris-block {
-      display: inline-block;
-      font-size: 1.8rem;
-      font-family: 'Cormorant Garamond', serif;
-      letter-spacing: 8px;
-      border-top: 1px solid #d4af7a;
-      border-bottom: 1px solid #d4af7a;
-      padding: 0.5rem 1.2rem;
-    }
-
-    /* signature footer */
-    .footer-heritage {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid #2f281f;
+    /* Taste of Chanel – art deco table */
+    .taste-showcase {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      gap: 2rem;
+      margin: 4rem 0 3rem;
+      justify-content: center;
       align-items: center;
-      gap: 1rem;
+    }
+
+    .taste-card {
+      background: #0c0907e0;
+      padding: 1.5rem;
+      width: 260px;
+      text-align: center;
+      border-radius: 2px;
+      border: 1px solid #30271f;
+      transition: transform 0.2s;
+    }
+
+    .taste-card:hover {
+      transform: translateY(-8px);
+      border-color: #d4af7a;
+    }
+
+    .chanel-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .taste-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+    }
+
+    .taste-desc {
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    /* Coco quote repeated as fine art */
+    .secondary-quote {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M20,40 L80,40 M20,60 L80,60 M40,20 L40,80 M60,20 L60,80" stroke="%23d4af7a" stroke-width="0.8"/></svg>');
+      margin: 2rem 0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .secondary-quote .quote {
+      font-size: 1.5rem;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* FOOTER with image placed at bottom */
+    .final-footer {
+      margin-top: 4rem;
+      text-align: center;
+      border-top: 1px solid #2f281f;
+      padding: 2rem 1rem 1.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    }
+
+    .footer-brand-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
       font-size: 0.7rem;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    .footer-chains span {
-      margin: 0 12px;
+    .footer-brand-row span {
+      color: #bfaa8a;
     }
 
-    .coco-sig {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 600;
+    .footer-brand-row .divider {
       color: #d4af7a;
+      opacity: 0.6;
     }
 
-    /* New section: Footer Image Container — places the PNG next to footer */
-    .footer-image-section {
+    .footer-image {
+      max-width: 100%;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-      padding: 1rem 1rem 0.5rem;
-      border-top: 1px solid rgba(212, 175, 122, 0.2);
+      margin: 1rem auto 1.5rem;
     }
 
-    .footer-side-image {
-      flex: 0 0 220px;
-      text-align: center;
-    }
-
-    .footer-side-image img {
+    .footer-image img {
       max-width: 100%;
       height: auto;
-      border: 1px solid rgba(212, 175, 122, 0.5);
-      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.6);
-      transition: all 0.3s ease;
-      filter: brightness(0.98) contrast(1.02);
-      background: #0a0705;
+      max-height: 240px;
+      border-radius: 2px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(212, 175, 122, 0.4);
+      transition: transform 0.2s ease, border-color 0.2s;
+      background: #0a0806;
     }
 
-    .footer-side-image img:hover {
+    .footer-image img:hover {
+      transform: scale(1.01);
       border-color: #d4af7a;
-      transform: scale(1.02);
-      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 12px 32px rgba(212, 175, 122, 0.2);
     }
 
-    .footer-text-complement {
-      flex: 1;
-      text-align: center;
-      font-size: 0.7rem;
-      letter-spacing: 1px;
-      opacity: 0.8;
-      font-weight: 300;
+    .final-credit {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-top: 1.5rem;
     }
 
-    @media (max-width: 760px) {
+    .gold-rule {
+      width: 80px;
+      height: 2px;
+      background: #d4af7a;
+      margin: 1rem auto;
+    }
+
+    /* responsiveness */
+    @media (max-width: 750px) {
       .content {
         padding: 1.2rem;
       }
-      .coco-taste-main {
-        font-size: 2.4rem;
+      .coco-taste {
+        font-size: 2.6rem;
       }
-      .manifesto-quote {
-        font-size: 1.3rem;
+      .quote-text {
+        font-size: 1.4rem;
       }
-      .dine-text h2 {
-        font-size: 2rem;
-      }
-      .quote-fragment .life-quote {
-        font-size: 1.1rem;
-      }
-      .paris-block {
-        font-size: 1.2rem;
-        letter-spacing: 4px;
-      }
-      .tribute-grid {
+      .dine-section {
         flex-direction: column;
         text-align: center;
       }
-      .quote-fragment {
-        border-left: none;
-        padding-left: 0;
-        border-top: 1px solid rgba(212, 175, 122, 0.4);
-        padding-top: 1rem;
+      .dine-text p {
+        max-width: 100%;
       }
-      .footer-image-section {
-        flex-direction: column;
-        gap: 1.2rem;
+      .manifesto p {
+        font-size: 1.2rem;
       }
-      .footer-side-image {
-        flex: 0 0 auto;
-        width: 180px;
+      .footer-image img {
+        max-height: 160px;
       }
     }
   </style>
 </head>
 <body>
-<div class="chanel-atelier">
+<div class="chanel-world">
   <div class="content">
 
-    <!-- HEADER: GABRIELLE "COCO" CHANEL + COCO TASTE OF CHANEL -->
+    <!-- header: GABRIELLE "COCO" CHANEL + COCO TASTE CHANEL -->
     <div class="chanel-header">
-      <div class="gabrielle-name">GABRIELLE "COCO" CHANEL</div>
-      <div class="double-c">
+      <div class="gabrielle">GABRIELLE "COCO" CHANEL</div>
+      <div class="cc-symbol">
         <span>C</span><span>C</span>
       </div>
-      <div class="coco-taste-main">
+      <h1 class="coco-taste">
         <span class="coco">COCO</span> TASTE<br>
-        <span style="font-size: 0.7em; letter-spacing: 8px;">OF CHANEL</span>
-      </div>
-      <hr class="gold-rule">
+        <span style="font-size: 0.9em; letter-spacing: 6px;">CHANEL</span>
+      </h1>
+      <div class="chanel-paris">PARIS — NEW YORK — BEVERLY HILLS</div>
+      <div class="gold-rule"></div>
     </div>
 
-    <!-- VISUAL TRIBUTE (accurately matching the PNG content layout) -->
-    <div class="visual-tribute">
-      <div class="tribute-grid">
-        <div class="quote-fragment">
-          <div class="life-quote">
-            “MY LIFE DIDN'T PLEASE ME,<br> SO I CREATED MY LIFE.”
-          </div>
-          <div style="font-size:0.65rem; letter-spacing: 2px; margin-top: 10px;">— GABRIELLE CHANEL</div>
-        </div>
-        <div class="chanel-stamp">
-          <div class="brand-block">CHANEL</div>
-          <div class="brand-block" style="margin-top: 8px;">CHANEL</div>
-        </div>
+    <!-- Iconic quote: “My life didn't please me, so I created my life.” -->
+    <div class="quote-card">
+      <div class="quote-text">
+        “MY LIFE DIDN'T PLEASE ME,<br> SO I CREATED MY LIFE.”
       </div>
+      <div class="quote-author">— GABRIELLE CHANEL</div>
     </div>
 
-    <!-- Dine with Us Section from the PNG -->
-    <div class="dine-elegance">
+    <!-- Dine with Us Section -->
+    <div class="dine-section">
       <div class="dine-text">
         <h2>Dine with Us</h2>
-        <p>A Taste of Chanel — Gastronomy & Couture. An exclusive evening where elegance meets culinary artistry. Inspired by Coco’s legendary gatherings.</p>
-        <button class="reserve-cta" id="reserveBtn">Reserve Experience</button>
+        <div class="subhead">A Taste of Chanel — Gastronomy & Couture</div>
+        <p>An exclusive evening where the spirit of Coco meets culinary artistry. From intimate salons to Parisian rooftops, savor the essence of timeless elegance. Limited seats for a sensory journey.</p>
+        <button class="reserve-btn" id="reserveBtn">Reserve Experience</button>
       </div>
-      <div class="dine-icon-couture">
-        CHANEL<br>COUTURE<br>CAFÉ
-      </div>
-    </div>
-
-    <!-- Iconic quote: “I don't do fashion I am fashion” (exactly from PNG) -->
-    <div class="fashion-manifesto">
-      <div class="manifesto-quote">“I don't do fashion — I am fashion”</div>
-      <div style="font-size: 0.7rem; letter-spacing: 3px; margin-top: 0.6rem;">— COCO CHANEL</div>
-    </div>
-
-    <!-- CHANEL repeated pillars exactly as designed in PNG: CHANEL / CHANEL / CHANEL / PARIS / CHANEL / CHANEL -->
-    <div class="pillars-showcase">
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">PARIS</div></div>
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">MODE</div></div>
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">HAUTE</div></div>
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">JOAILLERIE</div></div>
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">PARFUM</div></div>
-      <div class="pillar-item"><div class="chanel-name">CHANEL</div><div class="sub">COUTURE</div></div>
-    </div>
-
-    <!-- PARIS CHANEL special block from PNG's lower section -->
-    <div class="paris-glow">
-      <div class="paris-block">CHANEL ✦ PARIS ✦ CHANEL</div>
-    </div>
-
-    <!-- Additional CHANEL CHANEL line to match spirit -->
-    <div style="text-align: center; margin: 1rem 0 2rem;">
-      <span style="font-size: 1rem; letter-spacing: 6px;">CHANEL</span> &nbsp;&nbsp;✦&nbsp;&nbsp; 
-      <span style="font-size: 1rem; letter-spacing: 6px;">CHANEL</span>
-    </div>
-
-    <!-- Footer with CHANEL elegance (original footer) -->
-    <div class="footer-heritage">
-      <div class="footer-chains">
-        <span>CHANEL</span> <span>✦</span> <span>CHANEL</span> <span>✦</span> <span>CHANEL</span>
-      </div>
-      <div class="coco-sig">COCO TASTE</div>
-      <div class="footer-chains">
-        <span>PARIS</span> <span>✦</span> <span>CHANEL</span>
+      <div class="dine-icon">
+        <div class="chanel-couture">CHANEL<br>COUTURE<br>CAFÉ</div>
       </div>
     </div>
 
-    <!-- === NEW SECTION: PICTURE "A Taste Of Chanel (4).png" placed next to footer === -->
-    <div class="footer-image-section">
-      <div class="footer-side-image">
-        <img src="data:image/png;base64,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"
-             alt="A Taste of Chanel elegant artwork" 
-             title="A Taste Of Chanel — Timeless Elegance">
+    <!-- “I don't do fashion I am fashion” Manifesto -->
+    <div class="manifesto">
+      <p>“I don't do fashion — I am fashion”</p>
+      <div style="font-size: 0.7rem; letter-spacing: 2px; margin-top: 0.5rem;">— COCO CHANEL</div>
+    </div>
+
+    <!-- CHANEL brand pillars repeated elegantly (matching the PNG motif) -->
+    <div class="brand-pillars">
+      <div class="pillar"><div class="chanel-brand">CHANEL</div><div class="city">PARIS</div></div>
+      <div class="pillar"><div class="chanel-brand">CHANEL</div><div class="city">MODE</div></div>
+      <div class="pillar"><div class="chanel-brand">CHANEL</div><div class="city">HAUTE</div></div>
+      <div class="pillar"><div class="chanel-brand">CHANEL</div><div class="city">JOAILLERIE</div></div>
+      <div class="pillar"><div class="chanel-brand">CHANEL</div><div class="city">PARFUM</div></div>
+    </div>
+
+    <!-- A Taste of Chanel: three signature elements (inspired by the "taste" concept) -->
+    <div class="taste-showcase">
+      <div class="taste-card">
+        <div class="chanel-icon">🍾🥂</div>
+        <div class="taste-title">Le Goût Chanel</div>
+        <div class="taste-desc">Champagne & caviar paired with black & white aesthetics. An homage to Coco’s legendary luncheons at the Ritz.</div>
       </div>
-      <div class="footer-text-complement">
-        ✦ A TASTE OF CHANEL ✦<br>
-        Timeless elegance, culinary poetry & couture spirit
+      <div class="taste-card">
+        <div class="chanel-icon">👗💎</div>
+        <div class="taste-title">The Camellia Table</div>
+        <div class="taste-desc">A sensory menu curated by Michelin-starred chefs, inspired by the iconic camellia and tweed textures.</div>
+      </div>
+      <div class="taste-card">
+        <div class="chanel-icon">✨🕯️</div>
+        <div class="taste-title">N°5 Essence</div>
+        <div class="taste-desc">Exclusive cocktail infusion with jasmine and rose, mirroring the world’s most legendary fragrance.</div>
       </div>
     </div>
 
-    <div style="text-align: center; margin-top: 1rem; font-size: 0.6rem; opacity: 0.6; letter-spacing: 2px; padding-bottom: 0.5rem;">
+    <!-- second quote from the image vibe: CHANEL / PARIS and additional phrase -->
+    <div class="secondary-quote">
+      <div class="quote">“Fashion fades, only style remains the same.”</div>
+      <div style="margin-top: 1rem; font-size: 0.8rem; letter-spacing: 4px;">CHANEL — PARIS — CHANEL</div>
+      <div class="gold-rule" style="width: 50px;"></div>
+    </div>
+  </div>
+
+  <!-- NEW FOOTER SECTION with the requested image "A Taste of Chanel (4).png" at the bottom -->
+  <div class="final-footer">
+    <div class="footer-brand-row">
+      <span>CHANEL</span> <span class="divider">✦</span> <span>CHANEL</span> <span class="divider">✦</span> <span>CHANEL</span>
+      <span class="divider">|</span> <span>PARIS</span> <span class="divider">✦</span> <span>COCO TASTE</span>
+    </div>
+    
+    <!-- Image placed here exactly at footer bottom -->
+    <div class="footer-image">
+      <img src="A Taste of Chanel (4).png" alt="A Taste of Chanel Signature Illustration" onerror="this.onerror=null; this.alt='Image not found — A Taste of Chanel (4).png'; this.style.opacity='0.7';">
+    </div>
+    
+    <div class="final-credit">
       A TASTE OF CHANEL — ETERNAL ELEGANCE
     </div>
   </div>
 </div>
 
 <script>
-  // Interactive dining reservation button
-  const reserveButton = document.getElementById('reserveBtn');
-  if (reserveButton) {
-    reserveButton.addEventListener('click', () => {
-      alert('✨ “A Taste of Chanel” — An exclusive gastronomic journey awaits. Please contact the Chanel concierge: +33 (0)1 42 86 28 00. Elegance is an attitude. ✨');
+  // simple interactive alert to match "Dine with Us" call to action
+  const reserveBtn = document.getElementById('reserveBtn');
+  if (reserveBtn) {
+    reserveBtn.addEventListener('click', () => {
+      alert('“A Taste of Chanel” — An exclusive dining experience awaits. Please contact our concierge at Paris +33 (0)1 42 86 28 00 for reservations. Elegance is an attitude.');
     });
   }
 
-  // subtle hover effect in console (purely for charm)
-  const pillars = document.querySelectorAll('.pillar-item');
-  pillars.forEach(p => {
-    p.addEventListener('click', () => {
-      console.log('Chanel — timeless elegance');
+  // additional subtle effect: all pillar cards have mini hover feedback
+  const pillars = document.querySelectorAll('.pillar');
+  pillars.forEach(pillar => {
+    pillar.addEventListener('click', () => {
+      console.log('Chanel essence touched');
     });
   });
 
-  // dynamic style addition for interactive finesse
-  const extraStyle = document.createElement('style');
-  extraStyle.textContent = `
-    .pillar-item:hover .chanel-name {
-      color: #f3e5c9;
-      text-shadow: 0 0 2px #b58d46;
+  // optional dynamic gold shimmer on brand pillars
+  const style = document.createElement('style');
+  style.textContent = `
+    .pillar:hover .chanel-brand {
+      color: #e6d5b3;
+      text-shadow: 0 0 2px #b59363;
       transition: 0.2s;
     }
-    .visual-tribute:hover {
-      border-color: #d4af7a;
-      transition: 0.25s;
+    .taste-card:hover .chanel-icon {
+      transform: scale(1.05);
+      transition: transform 0.2s;
     }
   `;
-  document.head.appendChild(extraStyle);
+  document.head.appendChild(style);
 </script>
-
 </body>
 </html>
 ```
