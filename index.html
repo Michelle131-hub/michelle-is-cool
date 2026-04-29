@@ -1,11 +1,11 @@
-Here is an HTML document that places the "A Taste of Chanel (4).png" image at the bottom footer of the brand tribute page.
+Here is an HTML document that enlarges the footer image and adds a second image as a full-width intro at the top.
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>A Taste of Chanel | Tribute to Coco Chanel</title>
+  <title>A Taste of Chanel | Coco Chanel Tribute</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -30,7 +30,7 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       overflow-x: hidden;
     }
 
-    /* texture overlay — subtle grain & elegance */
+    /* texture overlay — subtle grain */
     .chanel-world::before {
       content: "";
       position: fixed;
@@ -48,6 +48,52 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       position: relative;
       z-index: 2;
       padding: 2rem 2rem 2rem;
+    }
+
+    /* INTRO HERO IMAGE SECTION — BIG, BOLD, ELEGANT */
+    .intro-hero {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(212, 175, 122, 0.4);
+      background: #050302;
+    }
+
+    .hero-image-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(145deg, #080504, #000000);
+      padding: 1rem 1rem 0.5rem 1rem;
+    }
+
+    .hero-image {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      border-radius: 3px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.8);
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(212, 175, 122, 0.3);
+    }
+
+    .hero-image:hover {
+      transform: scale(1.01);
+      border-color: rgba(212, 175, 122, 0.7);
+    }
+
+    .intro-caption {
+      text-align: center;
+      margin-top: 1rem;
+      padding-bottom: 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #bfaa8a;
     }
 
     /* classic chanel typography */
@@ -153,7 +199,7 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       opacity: 0.7;
     }
 
-    /* dine with us section — elegant invitation */
+    /* dine with us section */
     .dine-section {
       display: flex;
       flex-wrap: wrap;
@@ -227,7 +273,6 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       transform: rotate(2deg);
     }
 
-    /* fashion manifesto row */
     .manifesto {
       background: #080605;
       padding: 2.2rem;
@@ -244,7 +289,6 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       letter-spacing: 1px;
     }
 
-    /* Gallery / brand pillars: CHANEL repeated elegantly */
     .brand-pillars {
       display: flex;
       flex-wrap: wrap;
@@ -276,7 +320,6 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       opacity: 0.8;
     }
 
-    /* Taste of Chanel – art deco table */
     .taste-showcase {
       display: flex;
       flex-wrap: wrap;
@@ -320,7 +363,6 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       line-height: 1.4;
     }
 
-    /* Coco quote repeated as fine art */
     .secondary-quote {
       background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M20,40 L80,40 M20,60 L80,60 M40,20 L40,80 M60,20 L60,80" stroke="%23d4af7a" stroke-width="0.8"/></svg>');
       margin: 2rem 0;
@@ -334,13 +376,13 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       font-family: 'Cormorant Garamond', serif;
     }
 
-    /* FOOTER with image placed at bottom */
+    /* FOOTER with BIGGER image */
     .final-footer {
       margin-top: 4rem;
       text-align: center;
       border-top: 1px solid #2f281f;
-      padding: 2rem 1rem 1.5rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      padding: 2rem 1rem 2rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     }
 
     .footer-brand-row {
@@ -363,28 +405,32 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       opacity: 0.6;
     }
 
+    /* BIGGER footer image container — enlarged size */
     .footer-image {
       max-width: 100%;
       display: flex;
       justify-content: center;
-      margin: 1rem auto 1.5rem;
+      margin: 1.5rem auto 2rem;
     }
 
     .footer-image img {
-      max-width: 100%;
+      max-width: 90%;
+      width: auto;
       height: auto;
-      max-height: 240px;
-      border-radius: 2px;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(212, 175, 122, 0.4);
-      transition: transform 0.2s ease, border-color 0.2s;
+      max-height: 420px;      /* MUCH BIGGER presence */
+      min-width: 260px;
+      border-radius: 4px;
+      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(212, 175, 122, 0.5);
+      transition: transform 0.3s ease, border-color 0.2s;
       background: #0a0806;
+      object-fit: contain;
     }
 
     .footer-image img:hover {
-      transform: scale(1.01);
+      transform: scale(1.02);
       border-color: #d4af7a;
-      box-shadow: 0 12px 32px rgba(212, 175, 122, 0.2);
+      box-shadow: 0 25px 40px -10px rgba(212, 175, 122, 0.25);
     }
 
     .final-credit {
@@ -424,15 +470,38 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
         font-size: 1.2rem;
       }
       .footer-image img {
-        max-height: 160px;
+        max-height: 260px;
+        max-width: 95%;
+      }
+      .hero-image {
+        max-height: 280px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .footer-image img {
+        max-height: 500px;
+      }
+      .hero-image {
+        max-height: 550px;
       }
     }
   </style>
 </head>
 <body>
 <div class="chanel-world">
-  <div class="content">
+  
+  <!-- INTRO SECTION: A Taste of Chanel (1).png placed at the top as a powerful intro -->
+  <div class="intro-hero">
+    <div class="hero-image-container">
+      <img class="hero-image" src="A Taste of Chanel (1).png" alt="Chanel Intro - A Taste of Chanel" onerror="this.onerror=null; this.alt='A Taste of Chanel (1).png intro image'; this.style.opacity='0.8';">
+    </div>
+    <div class="intro-caption">
+      ✦ L'ESPRIT CHANEL — WHERE ELEGANCE TAKES FORM ✦
+    </div>
+  </div>
 
+  <div class="content">
     <!-- header: GABRIELLE "COCO" CHANEL + COCO TASTE CHANEL -->
     <div class="chanel-header">
       <div class="gabrielle">GABRIELLE "COCO" CHANEL</div>
@@ -474,7 +543,7 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       <div style="font-size: 0.7rem; letter-spacing: 2px; margin-top: 0.5rem;">— COCO CHANEL</div>
     </div>
 
-    <!-- CHANEL brand pillars repeated elegantly (matching the PNG motif) -->
+    <!-- CHANEL brand pillars repeated elegantly -->
     <div class="brand-pillars">
       <div class="pillar"><div class="chanel-brand">CHANEL</div><div class="city">PARIS</div></div>
       <div class="pillar"><div class="chanel-brand">CHANEL</div><div class="city">MODE</div></div>
@@ -483,7 +552,7 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       <div class="pillar"><div class="chanel-brand">CHANEL</div><div class="city">PARFUM</div></div>
     </div>
 
-    <!-- A Taste of Chanel: three signature elements (inspired by the "taste" concept) -->
+    <!-- A Taste of Chanel: three signature elements -->
     <div class="taste-showcase">
       <div class="taste-card">
         <div class="chanel-icon">🍾🥂</div>
@@ -502,7 +571,7 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
       </div>
     </div>
 
-    <!-- second quote from the image vibe: CHANEL / PARIS and additional phrase -->
+    <!-- second quote from the image vibe -->
     <div class="secondary-quote">
       <div class="quote">“Fashion fades, only style remains the same.”</div>
       <div style="margin-top: 1rem; font-size: 0.8rem; letter-spacing: 4px;">CHANEL — PARIS — CHANEL</div>
@@ -510,16 +579,16 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
     </div>
   </div>
 
-  <!-- NEW FOOTER SECTION with the requested image "A Taste of Chanel (4).png" at the bottom -->
+  <!-- FOOTER SECTION with BIGGER IMAGE: "A Taste of Chanel (4).png" enlarged -->
   <div class="final-footer">
     <div class="footer-brand-row">
       <span>CHANEL</span> <span class="divider">✦</span> <span>CHANEL</span> <span class="divider">✦</span> <span>CHANEL</span>
       <span class="divider">|</span> <span>PARIS</span> <span class="divider">✦</span> <span>COCO TASTE</span>
     </div>
     
-    <!-- Image placed here exactly at footer bottom -->
+    <!-- LARGER FOOTER IMAGE -->
     <div class="footer-image">
-      <img src="A Taste of Chanel (4).png" alt="A Taste of Chanel Signature Illustration" onerror="this.onerror=null; this.alt='Image not found — A Taste of Chanel (4).png'; this.style.opacity='0.7';">
+      <img src="A Taste of Chanel (4).png" alt="A Taste of Chanel Signature - enlarged" onerror="this.onerror=null; this.alt='A Taste of Chanel (4).png'; this.style.opacity='0.7';">
     </div>
     
     <div class="final-credit">
@@ -529,7 +598,7 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
 </div>
 
 <script>
-  // simple interactive alert to match "Dine with Us" call to action
+  // interactive alert for "Reserve Experience"
   const reserveBtn = document.getElementById('reserveBtn');
   if (reserveBtn) {
     reserveBtn.addEventListener('click', () => {
@@ -537,7 +606,7 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
     });
   }
 
-  // additional subtle effect: all pillar cards have mini hover feedback
+  // subtle hover effect on pillars
   const pillars = document.querySelectorAll('.pillar');
   pillars.forEach(pillar => {
     pillar.addEventListener('click', () => {
@@ -545,7 +614,7 @@ Here is an HTML document that places the "A Taste of Chanel (4).png" image at th
     });
   });
 
-  // optional dynamic gold shimmer on brand pillars
+  // dynamic gold shimmer on brand pillars and image scaling
   const style = document.createElement('style');
   style.textContent = `
     .pillar:hover .chanel-brand {
